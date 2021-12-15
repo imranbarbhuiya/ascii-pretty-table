@@ -37,3 +37,17 @@ Result
 ```
 
 You can create table without headings as well.
+
+Change separators
+
+```js
+table.setSeparators({ top: ".", bottom: "'", edge: "|", fill: "-" });
+```
+
+## Methods and Properties
+
+- `name` - The name of the table.
+- `setSeparator({edge, top, fill, bottom})` - Set the separator character.
+- `setHeading(heading1, heading2, ...)` - Set the headings.
+- `addRow(row1, row2, ...)` - Add a row.
+- `toString()` - Return the table as a string.

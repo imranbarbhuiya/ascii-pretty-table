@@ -2,14 +2,20 @@ class Table {
   constructor(name) {
     this.name = name;
     this.rows = [];
-    this.setSeparator();
+    this.setSeparator({
+      edge: "|",
+      fill: "-",
+      top: ".",
+      bottom: "'",
+      corner: "+",
+    });
   }
-  setSeparator(options) {
-    const { edge, fill, top, bottom } = options || {};
-    this.edge = edge || "|";
-    this.fill = fill || "-";
-    this.top = top || ".";
-    this.bottom = bottom || "'";
+  setSeparator({ edge, fill, top, bottom, corner }) {
+    this.edge = edge || this.edge;
+    this.fill = fill || this.fill;
+    this.top = top || this.top;
+    this.bottom = bottom || this.bottom;
+    this.corner = corner || this.corner;
     return this;
   }
 
@@ -31,32 +37,32 @@ class Table {
       }),
       this.name.length + 6
     );
-    this.top
-      .repeat(repeat)
-      .split("")
-      .forEach((char) => (table += char));
+    table += this.corner;
+    table += this.top.repeat(repeat);
+    table += this.corner;
     table += "\n";
     table += `${this.edge} ${" ".repeat(this.name.length / 4)} ${
       this.name
     } ${" ".repeat(this.name.length / 4)} ${this.edge}\n`;
-    this.bottom
-      .repeat(repeat)
-      .split("")
-      .forEach((char) => (table += char));
+    table += this.corner;
+    table += this.bottom.repeat(repeat);
+    table += this.corner;
     table += "\n";
     this.rows.forEach((row) => {
       table += `${this.edge}`;
       row.forEach((column) => {
-        table += " ".repeat(
-          Math.max(0, (this.name.length - column.length) / 4)
-        );
+        const spaceRepeat = Math.max(0, (this.name.length - column.length) / 4);
+
+        table += " ".repeat(spaceRepeat);
         table += `${column}`;
-        table += " ".repeat(
-          Math.max(0, (this.name.length - column.length) / 4)
-        );
+        table += " ".repeat(spaceRepeat);
         table += this.edge;
       });
-      table += "\n" + this.bottom.repeat(repeat) + "\n";
+      table += "\n";
+      table += this.corner;
+      table += this.bottom.repeat(repeat);
+      table += this.corner;
+      table += "\n";
     });
     return table;
   }
