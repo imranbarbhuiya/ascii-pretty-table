@@ -26,14 +26,14 @@ Result
 
 ```ascii
 ......................
-|   A Title   |
+|      A Title       |
 ''''''''''''''''''''''
-|Column 1|Column 2|
+| Column 1 | Column 2|
 ''''''''''''''''''''''
-|Row 1|Row 2|
+|   Row 1  |  Row 2  |
 ''''''''''''''''''''''
-|Row 3|Row 4|
+|   Row 3  |  Row 4  |
 ''''''''''''''''''''''
 ```
 
-You can table without headings as well.
+You can create table without headings as well.
