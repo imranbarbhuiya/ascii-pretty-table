@@ -1,0 +1,24 @@
+{
+  "name": "ascii-pretty-table",
+  "version": "1.0.0",
+  "description": "make a pretty table ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imranbarbhuiya/ascii-pretty-table.git"
+  },
+  "keywords": [
+    "ascii",
+    "pretty-table",
+    "ascii-table"
+  ],
+  "author": "imranbarbhuiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imranbarbhuiya/ascii-pretty-table/issues"
+  },
+  "homepage": "https://github.com/imranbarbhuiya/ascii-pretty-table#readme"
+}
