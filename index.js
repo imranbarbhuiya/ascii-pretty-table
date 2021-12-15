@@ -2,11 +2,16 @@ class Table {
   constructor(name) {
     this.name = name;
     this.rows = [];
-    this.edge = "|";
-    this.fill = "-";
-    this.top = ".";
-    this.bottom = "'";
+    this.setSeparator();
   }
+  setSeparator({ edge, fill, top, bottom }) {
+    this.edge = edge || "|";
+    this.fill = fill || "-";
+    this.top = top || ".";
+    this.bottom = bottom || "'";
+    return this;
+  }
+
   setHeading(...headings) {
     this.rows.unshift(headings);
   }

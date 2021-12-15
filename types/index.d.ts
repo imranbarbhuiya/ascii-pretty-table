@@ -1,13 +1,24 @@
 declare class Table {
-    name: string;
-    rows: string[][];
+  name: string;
+  rows: string[][];
+  edge: string;
+  fill: string;
+  top: string;
+  bottom: string;
+  constructor(name: string);
+  setSeparator({
+    edge,
+    fill,
+    top,
+    bottom,
+  }: {
     edge: string;
     fill: string;
     top: string;
     bottom: string;
-    constructor(name: string);
-    setHeading(...headings: string[]): this;
-    addRow(...row: string[]): this;
-    toString(): string;
+  }): this;
+  setHeading(...headings: string[]): this;
+  addRow(...row: string[]): this;
+  toString(): string;
 }
 export default Table;
