@@ -4,7 +4,8 @@ class Table {
     this.rows = [];
     this.setSeparator();
   }
-  setSeparator({ edge, fill, top, bottom }) {
+  setSeparator(options) {
+    const { edge, fill, top, bottom } = options || {};
     this.edge = edge || "|";
     this.fill = fill || "-";
     this.top = top || ".";

@@ -12,10 +12,10 @@ declare class Table {
     top,
     bottom,
   }: {
-    edge: string;
-    fill: string;
-    top: string;
-    bottom: string;
+    edge?: string;
+    fill?: string;
+    top?: string;
+    bottom?: string;
   }): this;
   setHeading(...headings: string[]): this;
   addRow(...row: string[]): this;
