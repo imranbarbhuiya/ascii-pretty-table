@@ -1,6 +1,6 @@
 # ascii-pretty-table
 
-A simple and light weight library for creating ASCII tables.
+[ascii-pretty-table](https://www.npmjs.com/package/ascii-pretty-table), A simple and light weight library for creating ASCII tables.
 
 ## Uses
 
