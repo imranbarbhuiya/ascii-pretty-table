@@ -1,6 +1,6 @@
 {
   "name": "ascii-pretty-table",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "make a pretty table ",
   "main": "index.js",
   "scripts": {
