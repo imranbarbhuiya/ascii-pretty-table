@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/imranbarbhuiya/ascii-pretty-table/issues"
   },
-  "homepage": "https://github.com/imranbarbhuiya/ascii-pretty-table#readme",
+  "homepage": "https://imranbarbhuiya.github.io/ascii-pretty-table/",
   "devDependencies": {
     "chai": "^4.3.4"
   }
