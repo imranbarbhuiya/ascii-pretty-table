@@ -25,15 +25,15 @@ console.log(table.toString());
 Result
 
 ```ascii
-......................
++....................+
 |      A Title       |
-''''''''''''''''''''''
++''''''''''''''''''''+
 | Column 1 | Column 2|
-''''''''''''''''''''''
++''''''''''''''''''''+
 |   Row 1  |  Row 2  |
-''''''''''''''''''''''
++''''''''''''''''''''+
 |   Row 3  |  Row 4  |
-''''''''''''''''''''''
++''''''''''''''''''''+
 ```
 
 You can create table without headings as well.
@@ -41,13 +41,19 @@ You can create table without headings as well.
 Change separators
 
 ```js
-table.setSeparators({ top: ".", bottom: "'", edge: "|", fill: "-" });
+table.setSeparators({
+  top: ".",
+  bottom: "'",
+  edge: "|",
+  fill: "-",
+  corner: "+",
+});
 ```
 
 ## Methods and Properties
 
 - `name` - The name of the table.
-- `setSeparator({edge, top, fill, bottom})` - Set the separator character.
+- `setSeparator({top: ".", bottom: "'", edge: "|", fill: "-", corner: "+"})` - Set the separator character.
 - `setHeading(heading1, heading2, ...)` - Set the headings.
 - `addRow(row1, row2, ...)` - Add a row.
 - `toString()` - Return the table as a string.
