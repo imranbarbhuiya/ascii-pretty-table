@@ -1,16 +1,38 @@
 class Table {
+  /**
+   *
+   * @param {String} name
+   */
   constructor(name) {
     this.name = name;
+    /**
+     * @type {Array<Array<String>>}
+     */
     this.rows = [];
+    /**
+     * @type {{edge:String, fill:String, top:String, bottom: String, corner:String}}
+     * @default
+     * edge: "|",
+     * fill: "─",
+     * top: ".",
+     * bottom: "'",
+     * corner: "+"
+     *
+     */
     this.chars = {};
     this.setSeparator({
       edge: "|",
-      fill: "-",
+      fill: "─",
       top: ".",
       bottom: "'",
       corner: "+",
     });
   }
+  /**
+   *
+   * @param {{edge:String, fill:String, top:String, bottom: String, corner:String}} param0
+   * @returns {Table}
+   */
   setSeparator({ edge, fill, top, bottom, corner }) {
     this.chars.edge = edge || this.chars.edge;
     this.chars.fill = fill || this.chars.fill;
@@ -20,18 +42,39 @@ class Table {
     return this;
   }
 
+  /**
+   *
+   * @param  {...string} headings
+   * @returns {Table}
+   */
   setHeading(...headings) {
     this.rows.unshift(headings);
+    return this;
   }
+  /**
+   *
+   * @param  {...string} row
+   * @returns {Table}
+   */
   addRow(...row) {
     this.rows.push(row);
+    return this;
   }
+  /**
+   *
+   * @param {JSON} json
+   * @returns {Table}
+   */
   fromJSON(json) {
     this.name = json.name;
     this.chars = json.chars;
     this.rows = json.rows;
     return this;
   }
+  /**
+   *
+   * @returns {JSON}
+   */
   toJSON() {
     return {
       name: this.name,
@@ -39,7 +82,10 @@ class Table {
       rows: this.rows,
     };
   }
-
+  /**
+   *
+   * @returns {String}
+   */
   toString() {
     let table = "\n";
     const repeat = Math.max(

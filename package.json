@@ -4,7 +4,9 @@
   "description": "make a pretty table ",
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.test.js"
+    "test": "node test/index.test.js",
+    "docs": "npx typedoc index.js",
+    "build": "tsc -p tsconfig.json"
   },
   "types": "./types/index.d.ts",
   "repository": {
@@ -23,6 +25,8 @@
   },
   "homepage": "https://imranbarbhuiya.github.io/ascii-pretty-table/",
   "devDependencies": {
-    "chai": "^4.3.4"
+    "chai": "^4.3.4",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4"
   }
 }
