@@ -1,11 +1,13 @@
 declare class Table {
   name: string;
   rows: string[][];
-  edge: string;
-  fill: string;
-  top: string;
-  bottom: string;
-  corner: string;
+  chars: {
+    edge: string;
+    fill: string;
+    top: string;
+    bottom: string;
+    corner: string;
+  };
   constructor(name: string);
   setSeparator({
     edge,
