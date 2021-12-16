@@ -6,6 +6,7 @@ table.setHeading("Column 1", "Column 2");
 table.addRow("Row 1", "Row 2");
 table.addRow("Row 3", "Row 4");
 
+// table test
 assert.equal(
   table.toString(),
   "\n" +
@@ -20,3 +21,10 @@ assert.equal(
     "+''''''''''''''''''''''+\n",
   "Table is not correct"
 );
+
+// json test
+
+const newTable = new ascii();
+newTable.fromJSON(table.toJSON());
+
+assert.equal(newTable.toString(), table.toString(), "Table is not correct");

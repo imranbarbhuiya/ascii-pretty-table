@@ -2,7 +2,7 @@
 <a href="#ascii-pretty-table" id="ascii-pretty-table" style="color: inherit; text-decoration: none;">
   <h1>ascii-pretty-table</h1>
 </a>
-<p>A simple and light weight library for creating ASCII tables.</p>
+<p><a href="https://www.npmjs.com/package/ascii-pretty-table">ascii-pretty-table</a>, A simple and light weight library for creating ASCII tables.</p>
 
 <a href="#uses" id="uses" style="color: inherit; text-decoration: none;">
   <h2>Uses</h2>
@@ -25,6 +25,9 @@
 +&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;+
 </code></pre>
 <p>You can create table without headings as well.</p>
+<p>You can export or import table as JSON.</p>
+<pre><code class="language-js"><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">ascii</span><span class="hl-0"> = </span><span class="hl-3">require</span><span class="hl-0">(</span><span class="hl-4">&quot;ascii-pretty-table&quot;</span><span class="hl-0">);</span><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">table</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">ascii</span><span class="hl-0">(</span><span class="hl-4">&quot;A Title&quot;</span><span class="hl-0">);</span><br/><span class="hl-5">table</span><span class="hl-0">.</span><span class="hl-3">addRow</span><span class="hl-0">(</span><span class="hl-4">&quot;Row 1&quot;</span><span class="hl-0">, </span><span class="hl-4">&quot;Row 2&quot;</span><span class="hl-0">);</span><br/><span class="hl-5">table</span><span class="hl-0">.</span><span class="hl-3">addRow</span><span class="hl-0">(</span><span class="hl-4">&quot;Row 3&quot;</span><span class="hl-0">, </span><span class="hl-4">&quot;Row 4&quot;</span><span class="hl-0">);</span><br/><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">json</span><span class="hl-0"> = </span><span class="hl-5">table</span><span class="hl-0">.</span><span class="hl-3">toJSON</span><span class="hl-0">();</span><br/><br/><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">newTable</span><span class="hl-0"> = </span><span class="hl-1">new</span><span class="hl-0"> </span><span class="hl-3">ascii</span><span class="hl-0">();</span><br/><span class="hl-5">newTable</span><span class="hl-0">.</span><span class="hl-3">fromJSON</span><span class="hl-0">(</span><span class="hl-5">json</span><span class="hl-0">);</span>
+</code></pre>
 <p>Change separators</p>
 <pre><code class="language-js"><span class="hl-5">table</span><span class="hl-0">.</span><span class="hl-3">setSeparators</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-5">top:</span><span class="hl-0"> </span><span class="hl-4">&quot;.&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-5">bottom:</span><span class="hl-0"> </span><span class="hl-4">&quot;&#39;&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-5">edge:</span><span class="hl-0"> </span><span class="hl-4">&quot;|&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-5">fill:</span><span class="hl-0"> </span><span class="hl-4">&quot;-&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-5">corner:</span><span class="hl-0"> </span><span class="hl-4">&quot;+&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">});</span>
 </code></pre>
