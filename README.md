@@ -66,8 +66,4 @@ table.setSeparators({
 
 ## Methods and Properties
 
-- `name` - The name of the table.
-- `setSeparator({top: ".", bottom: "'", edge: "|", fill: "-", corner: "+"})` - Set the separator character.
-- `setHeading(heading1, heading2, ...)` - Set the headings.
-- `addRow(row1, row2, ...)` - Add a row.
-- `toString()` - Return the table as a string.
+read docs for [ascii-pretty-table](https://imranbarbhuiya.github.io/ascii-pretty-table/)
