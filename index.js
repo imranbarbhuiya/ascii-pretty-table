@@ -25,6 +25,18 @@ class Table {
   addRow(...row) {
     this.rows.push(row);
   }
+  fromJSON(json) {
+    this.name = json.name;
+    this.rows = json.rows;
+    return this;
+  }
+  toJSON() {
+    return {
+      name: this.name,
+      rows: this.rows,
+    };
+  }
+
   toString() {
     let table = "\n";
     const repeat = Math.max(

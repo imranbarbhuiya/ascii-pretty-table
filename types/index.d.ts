@@ -22,6 +22,8 @@ declare class Table {
   }): this;
   setHeading(...headings: string[]): this;
   addRow(...row: string[]): this;
+  fromJSON(json: JSON): this;
+  toJSON(): JSON;
   toString(): string;
 }
 export default Table;
