@@ -24,7 +24,7 @@ console.log(table.toString());
 
 Result
 
-```ascii
+```js
 +....................+
 |      A Title       |
 +''''''''''''''''''''+
