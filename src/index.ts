@@ -109,4 +109,4 @@ class Table {
   }
 }
 
-module.exports = Table;
+export default Table;

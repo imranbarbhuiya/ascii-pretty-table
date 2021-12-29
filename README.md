@@ -21,7 +21,9 @@ npm install ascii-pretty-table
 Example
 
 ```js
-const ascii = require("ascii-pretty-table");
+const ascii = require("ascii-pretty-table"); //commonjs
+import ascii from "ascii-pretty-table"; //es6
+
 const table = new ascii("A Title");
 table.setHeading("Column 1", "Column 2");
 table.addRow("Row 1", "Row 2");

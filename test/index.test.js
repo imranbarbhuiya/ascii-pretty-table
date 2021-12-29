@@ -1,4 +1,4 @@
-const ascii = require("../dist/index.js");
+const ascii = require("../index.js");
 
 const table = new ascii("A Title");
 table.setHeading("Column 1", "Column 2");

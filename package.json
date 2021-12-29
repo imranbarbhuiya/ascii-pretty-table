@@ -3,6 +3,17 @@
   "version": "1.3.0",
   "description": "make a pretty table ",
   "main": "dist/index.js",
+  "exports": {
+    ".": [
+      {
+        "require": "./index.js",
+        "import": "./dist/index.js"
+      },
+      "./index.js"
+    ],
+    "./*": "./",
+    "./esm": "./dist/index.js"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "pretest": "npm run build",
