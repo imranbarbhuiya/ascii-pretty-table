@@ -2,13 +2,18 @@
   "name": "ascii-pretty-table",
   "version": "1.2.3",
   "description": "make a pretty table ",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "node test/index.test.js",
-    "docs": "npx typedoc index.js",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "pretest": "npm run build",
+    "test": "jest",
+    "docs": "npx typedoc src/index.ts"
   },
-  "types": "./types/index.d.ts",
+  "types": "./dist/index.d.ts",
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imranbarbhuiya/ascii-pretty-table.git"
@@ -25,7 +30,8 @@
   },
   "homepage": "https://imranbarbhuiya.github.io/ascii-pretty-table/",
   "devDependencies": {
-    "chai": "^4.3.4",
+    "@types/node": "^17.0.5",
+    "jest": "^27.4.5",
     "typedoc": "^0.22.10",
     "typescript": "^4.5.4"
   }

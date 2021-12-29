@@ -1,9 +1,11 @@
 {
-  "include": ["index.js"],
   "compilerOptions": {
-    "allowJs": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "lib": ["es2015"],
     "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "types"
-  }
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"]
 }

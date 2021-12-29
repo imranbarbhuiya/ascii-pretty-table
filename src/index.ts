@@ -1,13 +1,20 @@
+export interface JsonData {
+  name: string;
+  chars: Chars;
+  rows: string[][];
+}
+export interface Chars {
+  edge: string;
+  top: string;
+  bottom: string;
+  corner: string;
+}
 class Table {
-  /**
-   *
-   * @param {String} name
-   */
-  constructor(name) {
+  public name: string;
+  public rows: string[][];
+  public chars: Chars;
+  constructor(name: string) {
     this.name = name;
-    /**
-     * @type {Array<Array<String>>}
-     */
     this.rows = [];
     /**
      * @type {{edge:String, fill:String, top:String, bottom: String, corner:String}}
@@ -19,53 +26,29 @@ class Table {
      * corner: "+"
      *
      */
-    this.chars = {};
-    this.setSeparator({
+    this.chars = {
       edge: "|",
-      fill: "─",
       top: ".",
       bottom: "'",
       corner: "+",
-    });
+    };
   }
-  /**
-   *
-   * @param {{edge:String, fill:String, top:String, bottom: String, corner:String}} param0
-   * @returns {Table}
-   */
-  setSeparator({ edge, fill, top, bottom, corner }) {
+  setSeparator({ edge, top, bottom, corner }: Partial<Chars>): this {
     this.chars.edge = edge || this.chars.edge;
-    this.chars.fill = fill || this.chars.fill;
     this.chars.top = top || this.chars.top;
     this.chars.bottom = bottom || this.chars.bottom;
     this.chars.corner = corner || this.chars.corner;
     return this;
   }
-
-  /**
-   *
-   * @param  {...string} headings
-   * @returns {Table}
-   */
-  setHeading(...headings) {
+  setHeading(...headings: string[]): this {
     this.rows.unshift(headings);
     return this;
   }
-  /**
-   *
-   * @param  {...string} row
-   * @returns {Table}
-   */
-  addRow(...row) {
+  addRow(...row: string[]): this {
     this.rows.push(row);
     return this;
   }
-  /**
-   *
-   * @param {JSON} json
-   * @returns {Table}
-   */
-  fromJSON(json) {
+  fromJSON(json: JsonData): this {
     this.name = json.name;
     this.chars = json.chars;
     this.rows = json.rows;
@@ -75,18 +58,15 @@ class Table {
    *
    * @returns {JSON}
    */
-  toJSON() {
+  toJSON(): JsonData {
     return {
       name: this.name,
       chars: this.chars,
       rows: this.rows,
     };
   }
-  /**
-   *
-   * @returns {String}
-   */
-  toString() {
+
+  toString(): string {
     let table = "\n";
     const repeat = Math.max(
       ...this.rows.map((row) => {

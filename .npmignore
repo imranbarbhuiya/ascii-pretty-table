@@ -3,3 +3,5 @@ test
 .github
 docs
 tsconfig.json
+src
+coverage
