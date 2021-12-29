@@ -18,7 +18,8 @@
     "build": "tsc -p tsconfig.json",
     "pretest": "npm run build",
     "test": "jest",
-    "docs": "npx typedoc src/index.ts"
+    "docs": "npx typedoc src/index.ts",
+    "prepublish": "npm run build"
   },
   "types": "./dist/index.d.ts",
   "jest": {
