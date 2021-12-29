@@ -1,6 +1,14 @@
+![npm](https://img.shields.io/npm/v/ascii-pretty-table?style=for-the-badge)
+![npm](https://img.shields.io/npm/dw/ascii-pretty-table?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/imranbarbhuiya/ascii-pretty-table?style=for-the-badge)
+![Build Status](https://img.shields.io/github/workflow/status/imranbarbhuiya/ascii-pretty-table/Build/main?label=Build&style=for-the-badge&logo=TypeScript)
+![Test Status](https://img.shields.io/github/workflow/status/imranbarbhuiya/ascii-pretty-table/Test/main?label=Test&style=for-the-badge&logo=Jest)
+
 # ascii-pretty-table
 
 [ascii-pretty-table](https://www.npmjs.com/package/ascii-pretty-table), A simple and light weight library for creating ASCII tables.
+
+[docs](https://www.imranbarbhuiya.github.io/ascii-pretty-table/)
 
 ## Uses
 
